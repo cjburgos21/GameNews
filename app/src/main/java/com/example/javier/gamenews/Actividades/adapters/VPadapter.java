@@ -1,4 +1,4 @@
-package adaptadores;
+package com.example.javier.gamenews.Actividades.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

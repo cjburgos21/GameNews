@@ -1,9 +1,7 @@
-package fragmentos;
+package com.example.javier.gamenews.Actividades.fragments;
 
-import android.app.ActionBar;
-import android.content.Context;
+import android.support.v7.app.ActionBar;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -16,7 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.javier.gamenews.R;
 
-import adaptadores.VPadapter;
+import com.example.javier.gamenews.Actividades.adapters.VPadapter;
 
 public class ContenedorFragment extends Fragment {
     private TabLayout tabLayout;
@@ -38,10 +36,10 @@ public class ContenedorFragment extends Fragment {
         vadapter.addfragment(new Generals(), "Generals");
         vadapter.addfragment(new TopPlayers(), "Top_Players");
         vadapter.addfragment(new Images(), "Images");
-        tabLayout.setTabTextColors(Color.parseColor("#81F7F3"), Color.parseColor("#ffffff"));
+        tabLayout.setTabTextColors(Color.parseColor("#727272"), Color.parseColor("#ffffff"));
 
         viewPager.setAdapter(vadapter);
-        vadapter.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
 
 
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
