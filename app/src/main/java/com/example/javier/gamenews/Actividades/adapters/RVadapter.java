@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.javier.gamenews.Actividades.News;
+import com.example.javier.gamenews.Actividades.News_obj;
 import com.example.javier.gamenews.R;
 
 import java.util.List;
@@ -16,9 +17,9 @@ import java.util.List;
 
 public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder>{
         Context context;
-        List<News> NewsList;
+        List<News_obj> NewsList;
 
-        public RVadapter(Context context, List<News> NewList){
+        public RVadapter(Context context, List<News_obj> NewList){
             this.context = context;
             this.NewsList = NewList;
         }
@@ -34,8 +35,8 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder>{
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.nuevotitulo.setText(NewsList.get(position).getTitulo());
-        holder.nuevosub.setText(NewsList.get(position).getTitulo2());
+        holder.nuevotitulo.setText(NewsList.get(position).getTitle());
+        holder.nuevosub.setText(NewsList.get(position).getDescription());
 
         final ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
         if (position == 0 || position%3==0) {
