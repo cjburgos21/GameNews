@@ -6,7 +6,9 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
-import com.example.javier.gamenews.Actividades.News_obj;
+import com.example.javier.gamenews.Actividades.objects.News_obj;
+import com.example.javier.gamenews.Actividades.objects.Players_obj;
+import com.example.javier.gamenews.Actividades.objects.Usuario;
 
 import java.util.List;
 
@@ -19,6 +21,9 @@ public interface conexion {
 
     @GET("news")
     Call<List<News_obj>> newsrequest(@Header("Authorization") String token);
+
+    @GET("players")
+    Call<List<Players_obj>> playersrequest(@Header("Authorization") String token);
 
 
 

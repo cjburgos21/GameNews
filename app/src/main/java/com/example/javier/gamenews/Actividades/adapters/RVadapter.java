@@ -6,11 +6,13 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.javier.gamenews.Actividades.News;
-import com.example.javier.gamenews.Actividades.News_obj;
+import com.example.javier.gamenews.Actividades.fragments.Images;
+import com.example.javier.gamenews.Actividades.objects.News_obj;
 import com.example.javier.gamenews.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,31 +40,32 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder>{
         holder.nuevotitulo.setText(NewsList.get(position).getTitle());
         holder.nuevosub.setText(NewsList.get(position).getDescription());
 
-        final ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
-        if (position == 0 || position%3==0) {
-            StaggeredGridLayoutManager.LayoutParams sglp = (StaggeredGridLayoutManager.LayoutParams) lp;
-            sglp.setFullSpan(true);
-            holder.itemView.setLayoutParams(sglp);
+        if(NewsList.get(position).getCoverImage() != "Noticia sin imagen"){
+            Picasso.with(context).load(NewsList.get(position).getCoverImage()).into(holder.nuevaimagen);
+
+
         }
 
     }
 
         @Override
         public int getItemCount() {
-        return NewsList.size();
+
+            return NewsList.size();
         }
 
         public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView nuevotitulo;
-        private TextView nuevosub;
+            private ImageView nuevaimagen;
+            private TextView nuevotitulo;
+            private TextView nuevosub;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             nuevotitulo = (TextView) itemView.findViewById(R.id.titulo);
             nuevosub = (TextView) itemView.findViewById(R.id.subtitulo);
-
+            nuevaimagen = (ImageView) itemView.findViewById(R.id.imagen);
         }
     }
 

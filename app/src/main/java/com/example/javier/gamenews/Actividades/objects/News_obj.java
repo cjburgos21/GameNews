@@ -1,4 +1,4 @@
-package com.example.javier.gamenews.Actividades;
+package com.example.javier.gamenews.Actividades.objects;
 
 public class News_obj {
 

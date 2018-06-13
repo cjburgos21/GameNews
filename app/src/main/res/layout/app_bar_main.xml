@@ -20,6 +20,16 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <!--<EditText
+        android:layout_marginLeft="150dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:textColor="#ffffff"
+        />
+        -->
+
+
     <include layout="@layout/content_main" />
 
 </android.support.design.widget.CoordinatorLayout>

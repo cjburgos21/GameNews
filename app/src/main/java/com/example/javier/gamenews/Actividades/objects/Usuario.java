@@ -1,4 +1,4 @@
-package com.example.javier.gamenews.Actividades;
+package com.example.javier.gamenews.Actividades.objects;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

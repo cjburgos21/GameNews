@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.javier.gamenews.Actividades.News_obj;
+import com.example.javier.gamenews.Actividades.objects.News_obj;
 import com.example.javier.gamenews.Actividades.adapters.RVadapter;
 import com.example.javier.gamenews.R;
 import com.example.javier.gamenews.Actividades.conexion;
