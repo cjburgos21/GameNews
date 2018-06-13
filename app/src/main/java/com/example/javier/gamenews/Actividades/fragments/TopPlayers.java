@@ -46,10 +46,6 @@ public class TopPlayers extends Fragment {
     public List<Players_obj> listafinal;
 
 
-    public TopPlayers(){
-
-    }
-
 
     @Nullable
     @Override
@@ -114,12 +110,12 @@ public class TopPlayers extends Fragment {
                             game = lista3.get(i).getGame();
                         }
 
-                        listafinal.add(new Players_obj(
-                                avatar
-                                ,lista3.get(i).get_id()
+                        listafinal.add(
+                                new Players_obj(avatar
                                 ,name
-                                ,game
-                                ,biografia
+                                        ,biografia
+                                        ,game
+                                        ,lista3.get(i).get_id()
                                 ,lista3.get(i).get__v()));
 
                 }

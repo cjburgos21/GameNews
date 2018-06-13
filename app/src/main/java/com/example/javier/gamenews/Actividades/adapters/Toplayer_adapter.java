@@ -37,6 +37,7 @@ public class Toplayer_adapter extends RecyclerView.Adapter<Toplayer_adapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+
         holder.playername.setText(Toplayerdata.get(position).getName());
         holder.playergame.setText(Toplayerdata.get(position).getGame());
         holder.description.setText(Toplayerdata.get(position).getBiografia());
@@ -44,8 +45,9 @@ public class Toplayer_adapter extends RecyclerView.Adapter<Toplayer_adapter.MyVi
         if (Toplayerdata.get(position).getAvatar() != "Jugador sin imagen") {
             Picasso.with(context).load(Toplayerdata.get(position).getAvatar()).into(holder.playeravatar);
 
-
         }
+
+
     }
 
         @Override
@@ -63,10 +65,10 @@ public class Toplayer_adapter extends RecyclerView.Adapter<Toplayer_adapter.MyVi
             public MyViewHolder(View views) {
                 super(views);
 
-                playername = (TextView) itemView.findViewById(R.id.name);
-                playergame = (TextView) itemView.findViewById(R.id.game_player);
-                playeravatar = (ImageView) itemView.findViewById(R.id.avatar);
-                description = (TextView) itemView.findViewById(R.id.description);
+                playername = (TextView) views.findViewById(R.id.name);
+                playergame = (TextView) views.findViewById(R.id.game_player);
+                playeravatar = (ImageView) views.findViewById(R.id.avatar);
+                description = (TextView) views.findViewById(R.id.description);
             }
         }
 
