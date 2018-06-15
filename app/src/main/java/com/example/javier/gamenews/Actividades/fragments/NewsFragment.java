@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +25,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.javier.gamenews.Actividades.Login.token;
+import static com.example.javier.gamenews.Actividades.Vistas_iniciales.Login.token;
 
 
 public class NewsFragment extends Fragment {
@@ -135,9 +135,23 @@ public class NewsFragment extends Fragment {
 
                 recyclerView = (RecyclerView) view2.findViewById(R.id.recycler1);
                 RVadapter rVadapter = new RVadapter(getContext(), nuovalista);
-                recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL ));
-                recyclerView.setAdapter(rVadapter);
 
+
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);
+                gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        if (position %3 == 0 ){
+                            return 2;
+                        }
+                        else{
+                            return 1;
+                        }
+                    }
+                });
+
+                recyclerView.setLayoutManager(gridLayoutManager);
+                recyclerView.setAdapter(rVadapter);
 
 
             }

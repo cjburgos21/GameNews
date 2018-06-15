@@ -1,6 +1,7 @@
 package com.example.javier.gamenews.Actividades;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.javier.gamenews.Actividades.fragments.ContenedorFragment;
 import com.example.javier.gamenews.Actividades.fragments.NewsFragment;
@@ -19,7 +22,6 @@ import com.example.javier.gamenews.R;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Fragment actualFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_news);
         changeFragment(new NewsFragment());
-    }
+
+       }
 
     @Override
     public void onBackPressed() {
@@ -97,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
     }
+
+
 
 
 }

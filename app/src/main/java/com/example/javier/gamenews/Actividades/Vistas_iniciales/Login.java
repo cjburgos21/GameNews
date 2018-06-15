@@ -1,4 +1,4 @@
-package com.example.javier.gamenews.Actividades;
+package com.example.javier.gamenews.Actividades.Vistas_iniciales;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.javier.gamenews.Actividades.MainActivity;
+import com.example.javier.gamenews.Actividades.conexion;
 import com.example.javier.gamenews.R;
 
 import retrofit2.Call;
@@ -64,14 +67,14 @@ public class Login extends AppCompatActivity {
 
                             if(response.code() !=401){
                                 token = response.body().getToken().toString();
-                                vista = new Intent(Login.this,MainActivity.class);
-                                startActivity(vista);
+                               vista = new Intent(getApplicationContext(), MainActivity.class);
+                               startActivity(vista);
                             }
                         }
 
                         @Override
                         public void onFailure(Call<Usuario> call, Throwable t) {
-
+                            Toast.makeText(getApplicationContext(),"No hay Internet",Toast.LENGTH_LONG).show();
                         }
                     });
 
@@ -81,6 +84,9 @@ public class Login extends AppCompatActivity {
 
         }
 
+        public interface LoginListener{
+            void cargardatos(String username, String password, boolean signed);
+        }
 
 
     }

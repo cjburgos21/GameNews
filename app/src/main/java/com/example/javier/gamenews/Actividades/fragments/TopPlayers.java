@@ -1,14 +1,11 @@
 package com.example.javier.gamenews.Actividades.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +13,7 @@ import android.view.ViewGroup;
 import com.example.javier.gamenews.Actividades.objects.Players_obj;
 import com.example.javier.gamenews.R;
 import com.example.javier.gamenews.Actividades.adapters.Toplayer_adapter;
-import static com.example.javier.gamenews.Actividades.Login.token;
+import static com.example.javier.gamenews.Actividades.Vistas_iniciales.Login.token;
 import com.example.javier.gamenews.Actividades.conexion;
 
 import java.util.ArrayList;
@@ -27,7 +24,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
 
 public class TopPlayers extends Fragment {
 

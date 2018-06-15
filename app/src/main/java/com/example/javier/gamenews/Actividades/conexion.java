@@ -25,6 +25,10 @@ public interface conexion {
     @GET("players")
     Call<List<Players_obj>> playersrequest(@Header("Authorization") String token);
 
+    /*
+    @POST("register")
+    Call<Usuario> registerrequest(@Field("user") String username, @Field("avatar") String avatar, @Field("password") String password);
+    */
 
 
 }
