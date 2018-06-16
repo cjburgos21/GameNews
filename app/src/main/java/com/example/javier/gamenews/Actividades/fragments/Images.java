@@ -44,6 +44,7 @@ public class Images extends Fragment {
     private List<News_obj> extra = null;
     private Call<List<News_obj>> llama;
     View view;
+    RecyclerView img_recycler;
 
     public Images(){
 
@@ -149,11 +150,12 @@ public class Images extends Fragment {
 
 
                  }
-                     recyclerView =  view.findViewById(R.id.recycler1);
-                     recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-                     recyclerView.setHasFixedSize(true);
+                     img_recycler =  view.findViewById(R.id.recycler_images);
+                 //apues proba creando otro recycler solo para las imagenes
+                     img_recycler.setLayoutManager(new GridLayoutManager(getContext(),2));
+                     img_recycler.setHasFixedSize(true);
                      Images_adapter adapter = new Images_adapter(img_listfinal,getContext());
-                     recyclerView.setAdapter(adapter);
+                     img_recycler.setAdapter(adapter);
              }
 
              @Override

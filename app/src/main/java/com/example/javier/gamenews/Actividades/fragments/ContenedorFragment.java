@@ -21,6 +21,7 @@ public class ContenedorFragment extends Fragment {
     private ViewPager viewPager;
     private VPadapter vadapter;
     public String aux2;
+    public String aux4;
     View view;
 
 
@@ -35,7 +36,10 @@ public class ContenedorFragment extends Fragment {
         vadapter = new VPadapter(getChildFragmentManager());
 
 
+        //Generals generals = new Generals();
+        //generals.filtrador2(aux4);
         vadapter.addfragment(new Generals(), "Generals");
+
 
         TopPlayers topPlayers = new TopPlayers();
         topPlayers.filtrador(aux2);
@@ -58,5 +62,10 @@ public class ContenedorFragment extends Fragment {
         aux2 = aux;
         return aux2;
     }
+
+    /*public String filtrador2(String aux3){
+        aux4 = aux3;
+        return aux4;
+    }*/
 
 }

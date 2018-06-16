@@ -23,5 +23,5 @@ public interface Players__DAO {
     public List<Players_DB> getPlayers();
 
     @Query("SELECT * FROM players_db WHERE game = :lol")
-    public Players_DB getPlayersWhitId(String game);
+    public Players_DB getPlayersWhitId(String lol);
 }
