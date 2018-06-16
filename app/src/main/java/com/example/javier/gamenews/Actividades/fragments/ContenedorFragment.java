@@ -20,6 +20,7 @@ public class ContenedorFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private VPadapter vadapter;
+    public String aux2;
     View view;
 
 
@@ -33,8 +34,13 @@ public class ContenedorFragment extends Fragment {
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         vadapter = new VPadapter(getChildFragmentManager());
 
+
         vadapter.addfragment(new Generals(), "Generals");
-        vadapter.addfragment(new TopPlayers(), "Top_Players");
+
+        TopPlayers topPlayers = new TopPlayers();
+        topPlayers.filtrador(aux2);
+        vadapter.addfragment(topPlayers, "Top_Players");
+
         vadapter.addfragment(new Images(), "Images");
         tabLayout.setTabTextColors(Color.parseColor("#727272"), Color.parseColor("#ffffff"));
 
@@ -47,6 +53,10 @@ public class ContenedorFragment extends Fragment {
 
         return view;
 
+    }
+    public String filtrador(String aux){
+        aux2 = aux;
+        return aux2;
     }
 
 }

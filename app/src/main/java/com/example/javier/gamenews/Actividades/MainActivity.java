@@ -16,11 +16,15 @@ import android.widget.Button;
 
 import com.example.javier.gamenews.Actividades.fragments.ContenedorFragment;
 import com.example.javier.gamenews.Actividades.fragments.NewsFragment;
+import com.example.javier.gamenews.Actividades.objects.News_obj;
 import com.example.javier.gamenews.R;
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    public String filtrador;
+    public ContenedorFragment contenedorFragment;
     private Fragment actualFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,15 +68,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_lol:
-                changeFragment(new ContenedorFragment());
+                filtrador = "lol";
+                contenedorFragment = new ContenedorFragment();
+                contenedorFragment.filtrador(filtrador);
+                changeFragment(contenedorFragment);
                 break;
 
             case R.id.nav_csgo:
-                changeFragment(new ContenedorFragment());
+                filtrador = "csgo";
+                contenedorFragment = new ContenedorFragment();
+                contenedorFragment.filtrador(filtrador);
+                changeFragment(contenedorFragment);
                 break;
 
             case R.id.nav_dota2:
-                changeFragment(new ContenedorFragment());
+                filtrador = "overwatch";
+                contenedorFragment = new ContenedorFragment();
+                contenedorFragment.filtrador(filtrador);
+                changeFragment(contenedorFragment);
                 break;
 
 
@@ -94,10 +107,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void changeFragment(Fragment fragment) {
-        if (actualFragment == null || !fragment.getClass().getName().equals(actualFragment.getClass().getName())) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
             actualFragment = fragment;
-        }
 
     }
 

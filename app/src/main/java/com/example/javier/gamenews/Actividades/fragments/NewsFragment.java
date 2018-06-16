@@ -38,7 +38,7 @@ public class NewsFragment extends Fragment {
     private Call<List<News_obj>> llama;
     private String title;
     private List<News_obj> lista2 = null;
-    private List<News_obj> nuovalista;
+    public static List<News_obj> nuovalista;
     private String body;
     private String game;
     private String coverImage;

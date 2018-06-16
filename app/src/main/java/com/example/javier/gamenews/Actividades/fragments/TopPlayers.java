@@ -14,6 +14,8 @@ import com.example.javier.gamenews.Actividades.objects.Players_obj;
 import com.example.javier.gamenews.R;
 import com.example.javier.gamenews.Actividades.adapters.Toplayer_adapter;
 import static com.example.javier.gamenews.Actividades.Vistas_iniciales.Login.token;
+import static com.example.javier.gamenews.Actividades.fragments.NewsFragment.nuovalista;
+
 import com.example.javier.gamenews.Actividades.conexion;
 
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import com.example.javier.gamenews.Actividades.fragments.NewsFragment;
+
 
 public class TopPlayers extends Fragment {
 
@@ -40,6 +44,8 @@ public class TopPlayers extends Fragment {
     public String __v;
     public List<Players_obj> lista3 = null;
     public List<Players_obj> listafinal;
+    public List<Players_obj> filtrada;
+    String aux2;
 
 
 
@@ -79,42 +85,55 @@ public class TopPlayers extends Fragment {
 
                 for(int i=0; i<lista3.size();i++){
 
-                    if(lista3.get(i).getAvatar() == null){
-                        avatar = "Jugador sin imagen";}
-                        else{
-                        avatar = lista3.get(i).getAvatar();}
+                    if(lista3.get(i).getGame().equals(aux2)) {
 
 
-                        if(lista3.get(i).getName() == null){
-                        name = "Jugador sin nombre";
-                        }
-                        else{
-                        name = lista3.get(i).getName();
-                        }
-
-                        if(lista3.get(i).getBiografia() == null){
-                        biografia = "Jugador sin biografia";
-                        }
-                        else{
-                        biografia = lista3.get(i).getBiografia();
+                        if (lista3.get(i).getAvatar() == null) {
+                            avatar = "Jugador sin imagen";
+                        } else {
+                            avatar = lista3.get(i).getAvatar();
                         }
 
-                        if(lista3.get(i).getGame() == null){
-                        game = "Jugador sin juego";
+
+                        if (lista3.get(i).getName() == null) {
+                            name = "Jugador sin nombre";
+                        } else {
+                            name = lista3.get(i).getName();
                         }
-                        else {
+
+                        if (lista3.get(i).getBiografia() == null) {
+                            biografia = "Jugador sin biografia";
+                        } else {
+                            biografia = lista3.get(i).getBiografia();
+                        }
+
+                        if (lista3.get(i).getGame() == null) {
+                            game = "Jugador sin juego";
+                        } else {
                             game = lista3.get(i).getGame();
                         }
 
                         listafinal.add(
                                 new Players_obj(avatar
-                                ,name
-                                        ,biografia
-                                        ,game
-                                        ,lista3.get(i).get_id()
-                                ,lista3.get(i).get__v()));
+                                        , name
+                                        , biografia
+                                        , game
+                                        , lista3.get(i).get_id()
+                                        , lista3.get(i).get__v()));
 
+                    }
                 }
+
+
+                /*
+                for (int i=0; i<listafinal.size(); i++){
+
+                    if(listafinal.get(i).getGame().equals(nuovalista)){
+                        filtrada.add(listafinal.get(i));
+                    }
+
+
+                }*/
 
 
                 recyclerView = (RecyclerView) view3.findViewById(R.id.top_players_recyclerview);
@@ -132,6 +151,11 @@ public class TopPlayers extends Fragment {
             }
         });
 
+    }
+
+    public String filtrador(String aux){
+        aux2 = aux;
+        return aux2;
     }
 
 
