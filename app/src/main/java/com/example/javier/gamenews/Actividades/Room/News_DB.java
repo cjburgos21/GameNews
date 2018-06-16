@@ -17,7 +17,9 @@ public class News_DB {
 
     @PrimaryKey
     @NonNull
-    private String _id;
+    private int _id;
+
+    //No se utiliza constructr por el uso de @Entity
 
 
     //Creando setters y getters para atributos restantes

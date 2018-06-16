@@ -1,4 +1,4 @@
 package com.example.javier.gamenews.Actividades.Room;
 
-public class DAO {
+public abstract class DataBase {
 }
