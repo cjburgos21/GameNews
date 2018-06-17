@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Actividades.fragments.NewsFragment"
-    android:background="#848484"
+    android:background="#FACC2E"
     >
 
     <android.support.v7.widget.RecyclerView
