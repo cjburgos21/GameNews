@@ -7,36 +7,10 @@
     android:id="@+id/frag_news"
     >
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"
-        android:textColor="@color/colorPrimary"
-        android:text="Noticia"
-        android:id="@+id/general_title"
-        />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/generals_img"
-        />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/generals_description"
-        />
-
-
-    </LinearLayout>
+        android:id="@+id/generals_recyclerview">
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

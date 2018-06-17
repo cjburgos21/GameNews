@@ -41,7 +41,7 @@ public class TopPlayers extends Fragment {
     public String game;
     public String biografia;
     public String avatar;
-    public String __v;
+    public int __v;
     public List<Players_obj> lista3 = null;
     public List<Players_obj> listafinal;
     public List<Players_obj> filtrada;

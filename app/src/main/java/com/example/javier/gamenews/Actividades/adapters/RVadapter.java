@@ -1,12 +1,8 @@
 package com.example.javier.gamenews.Actividades.adapters;
 
-import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.javier.gamenews.Actividades.fragments.ContenedorFragment;
-import com.example.javier.gamenews.Actividades.fragments.Generals;
-import com.example.javier.gamenews.Actividades.fragments.Images;
 import com.example.javier.gamenews.Actividades.objects.News_obj;
 import com.example.javier.gamenews.R;
 import com.squareup.picasso.Picasso;

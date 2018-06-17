@@ -21,7 +21,6 @@ public class ContenedorFragment extends Fragment {
     private ViewPager viewPager;
     private VPadapter vadapter;
     public String aux2;
-    public String aux4;
     View view;
 
 
