@@ -36,7 +36,6 @@ public class Images extends Fragment {
     private static String datos;
     private Retrofit retrofit;
     private String url;
-    private FragmentListener fragmentListener;
     private conexion conexion1;
     RecyclerView recyclerView;
     private List<News_obj> imagelist2;
@@ -45,6 +44,12 @@ public class Images extends Fragment {
     private Call<List<News_obj>> llama;
     View view;
     RecyclerView img_recycler;
+    String title;
+    String body;
+    String game;
+    String coverImage;
+    String description;
+    String created_date;
 
     public Images(){
 
@@ -60,7 +65,7 @@ public class Images extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_images,container,false);
+        view = inflater.inflate(R.layout.fragment_news,container,false);
         loadImages();
         return view;
     }
@@ -90,16 +95,9 @@ public class Images extends Fragment {
 
                  extra = response.body();
 
-                 String title;
-                 String body;
-                 String game;
-                 String coverImage;
-                 String description;
-                 String created_date;
+
 
                  for (int i = 0; i < extra.size(); i++) {
-
-                     if (extra.get(i).getCoverImage() != null && extra.get(i).getGame().equals(datos)) {
 
 
                          if (extra.get(i).getTitle() == null) {
@@ -146,12 +144,10 @@ public class Images extends Fragment {
                                  , description
                                  , created_date
                                  , extra.get(i).get__v()));
-                     }
 
 
                  }
-                     img_recycler =  view.findViewById(R.id.recycler_images);
-                 //apues proba creando otro recycler solo para las imagenes
+                     img_recycler =  view.findViewById(R.id.recycler1);
                      img_recycler.setLayoutManager(new GridLayoutManager(getContext(),2));
                      img_recycler.setHasFixedSize(true);
                      Images_adapter adapter = new Images_adapter(img_listfinal,getContext());
@@ -165,10 +161,6 @@ public class Images extends Fragment {
          });
 
     }
-
-    public interface FragmentListener{
-             void onFragmentInteraction(Uri uri);
-        }
 
 
     }
